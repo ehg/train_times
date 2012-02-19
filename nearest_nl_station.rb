@@ -2,7 +2,7 @@ require 'scraperwiki'
 
 class NearestNorthernLineStation
   def self.fetch_stations()
-    response = ScraperWiki.scrape "https://api.scraperwiki.com/api/1.0/datastore/sqlite?format=jsondict&name=stationsmerseyrail&query=SELECT%20Code%2C%20%5Bstation%20name%5D%2C%20latlng%20from%20%60swdata%60%20WHERE%20Lines%20LIKE%20'%25Northern%20Line%25'"
+    response = ScraperWiki::scrape "https://api.scraperwiki.com/api/1.0/datastore/sqlite?format=jsondict&name=stationsmerseyrail&query=SELECT%20Code%2C%20%5Bstation%20name%5D%2C%20latlng%20from%20%60swdata%60%20WHERE%20Lines%20LIKE%20'%25Northern%20Line%25'"
     parsed = JSON.parse response.to_str
     stations = {}
     pattern = /\('(?<lat>.+)', '(?<lng>.+)'\)/

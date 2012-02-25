@@ -4,7 +4,7 @@ require File.dirname(__FILE__) + '/../google_oauth.rb'
 WebMock.allow_net_connect!
 
 describe GoogleOAuth do
-  use_vcr_cassette
+  use_vcr_cassette 'requests'
 
   context "When obtaining a User Code" do
     before do
@@ -70,5 +70,21 @@ describe GoogleOAuth do
       @tokens.should_not be_nil
       @tokens['refresh_token'].should_not be_nil
     end
+
+    context "when we need to refresh our token" do
+      before do
+        @tokens = GoogleOAuth.get_tokens(@device_code, refresh=true)
+      end
+      it "should get an access token" do
+        @tokens.should_not be_nil
+        @tokens['access_token'].should_not be_nil
+      end
+
+      it "should get a refresh token" do
+        @tokens.should_not be_nil
+        @tokens['refresh_token'].should_not be_nil
+      end
+    end
   end
+
 end

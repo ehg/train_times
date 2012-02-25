@@ -6,7 +6,7 @@ require File.dirname(__FILE__) + '/../journey.rb'
 WebMock.allow_net_connect!
 
 describe TrainTimes do
-  use_vcr_cassette
+  use_vcr_cassette 'requests'
 
   context "When I'm at home and the closest station to me is Crosby and it's 8:10am" do
     before do

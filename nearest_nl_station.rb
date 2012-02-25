@@ -18,6 +18,7 @@ class NearestNorthernLineStation
   end
   
   def self.get(location)
+    fetch_stations if self.stations.nil?
     distances = {}
     @stations.each do |k, v|
       distances[k] = distance(location, [v[:latitude], v[:longitude]])

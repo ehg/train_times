@@ -1,0 +1,40 @@
+---
+# Get user code
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :post
+    uri: https://accounts.google.com:443/o/oauth2/device/code
+    body: client_id=344903981192.apps.googleusercontent.com&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Flatitude.current.best
+    headers:
+      content-type:
+      - application/x-www-form-urlencoded
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json
+    body: ! "{\n  \"device_code\" : \"4/3lu6w-qo6vXlrG7wT70lRw2WAH5l\",\n  \"user_code\"
+      : \"q23a86qn\",\n  \"verification_url\" : \"http://www.google.com/device\",\n
+      \ \"expires_in\" : 1800,\n  \"interval\" : 5\n}"
+
+# Get access and refresh tokens
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :post
+    uri: https://accounts.google.com:443/o/oauth2/token
+    body: client_id=344903981192.apps.googleusercontent.com&client_secret=JybihFWQrtxtU7ay9DyupV6q&code=4%2FljGGIAyYdrXEqrSwdhGhkot2_Teo&grant_type=http%3A%2F%2Foauth.net%2Fgrant_type%2Fdevice%2F1.0
+    headers:
+      content-type:
+      - application/x-www-form-urlencoded
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json
+    body: ! "{\n  \"access_token\" : \"ya29.AHES6ZSuY8f6WFLswSv0HELP2J4cCvFSj-8GiZM0Pr6cgXU\",
+              \"token_type\" : \"Bearer\", \"expires_in\" : 3600, 
+              \"refresh_token\" : \"1/551G1yXUqgkDGnkfFk6ZbjMLMDIMxo3JFc8lY8CAR-Q\"\n}"

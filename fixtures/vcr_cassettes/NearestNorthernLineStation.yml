@@ -1,0 +1,77 @@
+# List of merseyrail stations on the northern line
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: https://api.scraperwiki.com:443/api/1.0/datastore/sqlite?format=jsondict&name=stationsmerseyrail&query=SELECT%20Code,%20%5Bstation%20name%5D,%20latlng%20from%20%60swdata%60%20WHERE%20Lines%20LIKE%20'%25Northern%20Line%25'
+    body: !!null 
+    headers: !!null 
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      content-type:
+      - application/json; charset=utf-8
+    body: ! "[\n    {\n        \"station name\": \"Aigburth\",\n        \"latlng\":
+      \"('53.3657862', '-2.9259491')\",\n        \"Code\": \"AIG\"\n    },\n    {\n
+      \       \"station name\": \"Ainsdale\",\n        \"latlng\": \"('53.6020152',
+      '-3.0423644')\",\n        \"Code\": \"ANS\"\n    },\n    {\n        \"station
+      name\": \"Aintree\",\n        \"latlng\": \"('53.4736209', '-2.9562135')\",\n
+      \       \"Code\": \"AIN\"\n    },\n    {\n        \"station name\": \"Aughton
+      Park\",\n        \"latlng\": \"('53.5543582', '-2.8970194')\",\n        \"Code\":
+      \"AUG\"\n    },\n    {\n        \"station name\": \"Bank Hall\",\n        \"latlng\":
+      \"('53.4374386', '-2.9874198')\",\n        \"Code\": \"BAH\"\n    },\n    {\n
+      \       \"station name\": \"Birkdale\",\n        \"latlng\": \"('53.6332857',
+      '-3.0142498')\",\n        \"Code\": \"BDL\"\n    },\n    {\n        \"station
+      name\": \"Blundellsands & Crosby\",\n        \"latlng\": \"('53.4877791', '-3.0400429')\",\n
+      \       \"Code\": \"BLN\"\n    },\n    {\n        \"station name\": \"Bootle
+      New Strand\",\n        \"latlng\": \"('53.4539330', '-2.9928624')\",\n        \"Code\":
+      \"BNW\"\n    },\n    {\n        \"station name\": \"Bootle Oriel Road\",\n        \"latlng\":
+      \"('53.4473224', '-2.9954787')\",\n        \"Code\": \"BOT\"\n    },\n    {\n
+      \       \"station name\": \"Brunswick\",\n        \"latlng\": \"('53.3831929',
+      '-2.9761960')\",\n        \"Code\": \"BRW\"\n    },\n    {\n        \"station
+      name\": \"Cressington\",\n        \"latlng\": \"('53.3594925', '-2.9121389')\",\n
+      \       \"Code\": \"CSG\"\n    },\n    {\n        \"station name\": \"Fazakerley\",\n
+      \       \"latlng\": \"('53.4691766', '-2.9351283')\",\n        \"Code\": \"FAZ\"\n
+      \   },\n    {\n        \"station name\": \"Formby\",\n        \"latlng\": \"('53.5534408',
+      '-3.0707709')\",\n        \"Code\": \"FBY\"\n    },\n    {\n        \"station
+      name\": \"Freshfield\",\n        \"latlng\": \"('53.5662671', '-3.0698417')\",\n
+      \       \"Code\": \"FRE\"\n    },\n    {\n        \"station name\": \"Hall Road\",\n
+      \       \"latlng\": \"('53.4989423', '-3.0463313')\",\n        \"Code\": \"HLR\"\n
+      \   },\n    {\n        \"station name\": \"Hightown\",\n        \"latlng\":
+      \"('53.5250333', '-3.0569605')\",\n        \"Code\": \"HTO\"\n    },\n    {\n
+      \       \"station name\": \"Hillside\",\n        \"latlng\": \"('53.6233063',
+      '-3.0082015')\",\n        \"Code\": \"HIL\"\n    },\n    {\n        \"station
+      name\": \"Hunts Cross\",\n        \"latlng\": \"('53.3599539', '-2.8559209')\",\n
+      \       \"Code\": \"HNX\"\n    },\n    {\n        \"station name\": \"Kirkby\",\n
+      \       \"latlng\": \"('53.4874693', '-2.9011382')\",\n        \"Code\": \"KIR\"\n
+      \   },\n    {\n        \"station name\": \"Kirkdale\",\n        \"latlng\":
+      \"('53.4408479', '-2.9838556')\",\n        \"Code\": \"KKD\"\n    },\n    {\n
+      \       \"station name\": \"Liverpool Central\",\n        \"latlng\": \"('53.4043613',
+      '-2.9795537')\",\n        \"Code\": \"LVC\"\n    },\n    {\n        \"station
+      name\": \"Liverpool Moorfields\",\n        \"latlng\": \"('53.4083312', '-2.9886709')\",\n
+      \       \"Code\": \"MRF\"\n    },\n    {\n        \"station name\": \"Liverpool
+      South Parkway\",\n        \"latlng\": \"('53.3606912', '-2.8878818')\",\n        \"Code\":
+      \"LPY\"\n    },\n    {\n        \"station name\": \"Maghull\",\n        \"latlng\":
+      \"('53.5064927', '-2.9312002')\",\n        \"Code\": \"MAG\"\n    },\n    {\n
+      \       \"station name\": \"Old Roan\",\n        \"latlng\": \"('53.4869251',
+      '-2.9527450')\",\n        \"Code\": \"ORN\"\n    },\n    {\n        \"station
+      name\": \"Ormskirk\",\n        \"latlng\": \"('53.5687681', '-2.8811522')\",\n
+      \       \"Code\": \"OMS\"\n    },\n    {\n        \"station name\": \"Orrell
+      Park\",\n        \"latlng\": \"('53.4620253', '-2.9629418')\",\n        \"Code\":
+      \"OPK\"\n    },\n    {\n        \"station name\": \"Rice Lane\",\n        \"latlng\":
+      \"('53.4567084', '-2.9623847')\",\n        \"Code\": \"RIL\"\n    },\n    {\n
+      \       \"station name\": \"Sandhills\",\n        \"latlng\": \"('53.4265143',
+      '-2.9766741')\",\n        \"Code\": \"SDL\"\n    },\n    {\n        \"station
+      name\": \"Seaforth & Litherland\",\n        \"latlng\": \"('53.4652583', '-3.0069098')\",\n
+      \       \"Code\": \"SFL\"\n    },\n    {\n        \"station name\": \"Southport\",\n
+      \       \"latlng\": \"('53.6466786', '-3.0025293')\",\n        \"Code\": \"SOP\"\n
+      \   },\n    {\n        \"station name\": \"St Michaels\",\n        \"latlng\":
+      \"('53.3708233', '-2.9341600')\",\n        \"Code\": \"STM\"\n    },\n    {\n
+      \       \"station name\": \"Town Green\",\n        \"latlng\": \"('53.5417499',
+      '-2.9038151')\",\n        \"Code\": \"TWN\"\n    },\n    {\n        \"station
+      name\": \"Walton\",\n        \"latlng\": \"('53.4562877', '-2.9643932')\",\n
+      \       \"Code\": \"WAO\"\n    },\n    {\n        \"station name\": \"Waterloo\",\n
+      \       \"latlng\": \"('53.4749254', '-3.0254451')\",\n        \"Code\": \"WLO\"\n
+      \   }\n]"

@@ -4,6 +4,8 @@ require File.dirname(__FILE__) + '/../nearest_nl_station.rb'
 WebMock.allow_net_connect!
 
 describe NearestNorthernLineStation do
+  use_vcr_cassette
+
   # Should pass,  webmock/vcr bug?
   xit "should fetch a list of Northern Rail stations from the ScraperWiki API" do
     a_request(:get, 
